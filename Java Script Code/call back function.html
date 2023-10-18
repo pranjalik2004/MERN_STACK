@@ -1,0 +1,27 @@
+<html>
+    <head>
+        <script>
+            function ask(question,ok,cancle)
+            let r=confirm(question)
+            if (r){
+                ok()
+            }
+            else {
+                cancle()
+            }
+            function show(){
+                let ok1=function(){
+                    alert("ok1")
+
+                }
+                let cancle1=function() {
+                    alert("cancle1")
+                }
+                ask("do you want to exit?",ok1,cancle1)
+            }
+            
+            
+            </script>
+
+    </head>
+</html>
