@@ -1,0 +1,69 @@
+<html>
+
+<head>
+    <style>
+        .wrapper {
+            height: 200px;
+            font-size: 100px;
+            text-align: center;
+            color: lightblue;
+            display: flex;
+            /*height : 60px;
+         background-color : skyblue;*/
+           
+        }
+
+        .wrapper div {
+            height: 200%;
+            width: 80%;
+            background-color: whitesmoke;
+        }
+        input {
+            margin-left:27%;
+            padding:8px;
+        }
+        button {
+            padding: 8px;
+        }
+
+        ul {
+            list-style-type: none;
+            margin-left:27%;
+            padding:8px;
+        }
+
+        li {
+            margin: 8px 0;
+        }
+    </style>
+    <script>
+        function addtask() {
+            const taskinput = document.getElementById("taskinput");
+            const tasklist = document.getElementById("tasklist");
+
+           if (taskinput.value.trim() != "") {
+                const newtask = document.createElement("li");
+                newtask.innerHTML = taskinput.value;
+                tasklist.appendChild(newtask);
+                taskinput.value="";
+
+            }
+
+        
+        }
+    </script>
+</head>
+
+<body>
+    <div class="wrapper">
+        
+        <div> ToDos</div>
+
+    </div>
+    <input type="text" id="taskinput" placeholder="enter your todo">
+
+    <button onclick="addtask()">add task</button>
+    <ul id="tasklist"></ul>
+</body>
+
+</html>
