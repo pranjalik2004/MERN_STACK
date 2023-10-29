@@ -1,0 +1,60 @@
+<!--Dynamic Table Creation with User Input using JavaScript Form.-->
+
+
+<!DOCTYPE html> 
+ <html lang="en"> 
+ <head> 
+     <meta charset="UTF-8" /> 
+     <meta name="viewport" content="width=device-width, initial-scale=1.0" /> 
+     <script> 
+         function show() { 
+              let x=document.getElementById('t1') 
+             let z = document.getElementById('t2') 
+             let y=document.getElementById('t3')
+  let a= x.value  
+  let b= z.value    
+  let c= y.value     
+             let mytable = document.getElementById('table1') 
+               let row = document.createElement('tr') 
+                 let k1 = document.createElement('td') 
+                 let k2 = document.createElement('td') 
+                 let k3 =
+document.createElement('td')                
+  
+                 k1.innerHTML = a 
+                 k2.innerHTML = b 
+                 k3.innerHTML = c
+  
+                 row.append(k1) 
+                 row.append(k2) 
+                 row.append(k3)
+  
+                 mytable.append(row)
+ x.value="";
+ z.value="";
+ y.value="";
+         } 
+     </script> 
+ </head> 
+ <body> 
+     <br> 
+     <div>enter Name</div> 
+     <input type="text" id="t1" name="enter your name" placeholder=""> 
+     <div>enter Id</div> 
+     <input type="text" id="t2" name="enter id" placeholder=""> 
+     <br> 
+     <div>enter address</div> 
+     <input type="text" id="t3" name="enter address" placeholder=""> 
+     <br> 
+     <input type="button" value="add" onclick="show()"> 
+     <table id="table1" border="1"> 
+         <br> 
+         <br> 
+         <tr> 
+             <th>Name</th> 
+             <th>ID</th> 
+             <th>Address</th>
+         </tr> 
+     </table> 
+ </body> 
+   </html>
