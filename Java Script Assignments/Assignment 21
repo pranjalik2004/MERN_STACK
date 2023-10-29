@@ -1,0 +1,55 @@
+<!--Dynamic Table Creation with Form Input using JavaScript.-->
+
+
+<!DOCTYPE html> 
+ <html lang="en"> 
+ <head> 
+     <meta charset="UTF-8" /> 
+     <meta name="viewport" content="width=device-width, initial-scale=1.0" /> 
+     <script> 
+         function createtable() { 
+              let x=document.getElementById('t1') 
+             let z = document.getElementById('t2') 
+             let y=document.getElementById('t3')
+  let a= x.value  
+  let b= z.value    
+  let c= y.value     
+             let mytable = document.getElementById('table1') 
+               let row = document.createElement('tr') 
+                 let k1 = document.createElement('td') 
+                 let k2 = document.createElement('td') 
+                 let k3 =
+document.createElement('td')                
+  
+                 k1.innerHTML = a 
+                 k2.innerHTML = b 
+                 k3.innerHTML = c
+  
+                 row.append(k1) 
+                 row.append(k2) 
+                 row.append(k3)
+  
+                 mytable.append(row)
+ x.value="";
+ z.value="";
+ y.value="";
+         } 
+     </script> 
+ </head> 
+ <body> 
+     <br> 
+     <div>Student Name</div> 
+     <input type="text" id="t1" name="enter your name" placeholder=""> 
+     <div>Student roll no</div> 
+     <input type="text" id="t2" name="enter id" placeholder=""> 
+     <br> 
+     <div>Student class</div> 
+     <input type="text" id="t3" name="enter address" placeholder=""> 
+     <br> 
+     <br>
+     <input type="button" value="add" onclick="createtable()"> 
+     <table id="table1" border="1"> 
+            
+     </table> 
+ </body> 
+   </html>
