@@ -1,0 +1,123 @@
+<!--You will create a web form to ask the user to enter the following informaƟ on using the appropriate HTML5 
+
+form controls (elements) to represent each item in the list below: 
+
+ First Name ➔ input field of type text. 
+
+ Last Name ➔ input field of type text. 
+
+ Email Address ➔ input field of type email
+
+Address ➔ input field of type text. 
+
+ City ➔ input field of type text. 
+
+ Radio buƩ ons with the following opƟ ons (one of these opƟ ons should be selected as default, usually the first 
+
+one): * Premium Membership * Standard Membership * Basic Membership 
+
+ Send buƩ on to call (trigger) a funcƟ on named “userForm()”, which you will have to create, will take all the 
+
+form informaƟ on (user’s input). 
+
+ Cancel buƩ on to reset the form elements.-->
+
+
+<html>
+<style>
+body {
+    background-color: white;
+}
+
+.wrapper {
+    margin: 10px;
+    padding: 20px;
+    background-color: white;
+    height: 800px;
+    width: 290px;
+    border: 3px solid purple;
+}
+
+#b1 {
+    color: blue;
+    margin: 20px;
+}
+
+input {
+    margin: 20px;
+}
+</style>
+
+<head>
+<script>
+function usersinput() {
+    let firstname = document.getElementById("firstname").value;
+    let lastname = document.getElementById("lastname").value;
+    let email = document.getElementById("email").value;
+    let address = document.getElementById("address").value;
+    let city = document.getElementById("city").value;
+    let membershipoptions;
+    const radiobuttons = document.getElementsByName("options");
+    for (const radiobutton of radiobuttons) {
+        if (radiobutton.checked) {
+            membershipoptions = radiobutton.value;
+            break;
+        }
+    }
+
+    const userinput = `
+    First Name: ${firstname},
+    Last Name: ${lastname},
+    Email: ${email},
+    Address: ${address},
+    City: ${city},
+    Membership: ${membershipoptions}
+    `;
+    document.getElementById("b1").textContent = userinput;
+}
+
+function cancel() {
+    document.getElementById("firstname").value = "";
+    document.getElementById("lastname").value = "";
+    document.getElementById("email").value = "";
+    document.getElementById("address").value = "";
+    document.getElementById("city").value = "";
+
+    const radiobuttons = document.getElementsByName("options");
+    for (const radiobutton of radiobuttons) {
+        radiobutton.checked = false;
+    }
+
+    document.getElementById("b1").textContent = "";
+}
+</script>
+</head>
+
+<body>
+<div class="wrapper">
+    <div id="b1"></div>
+    <label>First Name:</label>
+    <input type="text" id="firstname">
+    <br>
+    <label>Last Name:</label>
+    <input type="text" id="lastname">
+    <br>
+    <label>Email:</label>
+    <input type="email" id="email">
+    <br>
+    <label>Address:</label>
+    <input type="text" id="address">    <br>
+    <label>City:</label>
+    <input type="text" id="city">
+    <br>
+    <input type="radio" id="premium" name="options" checked><label>Premium Membership</label>
+    <br>
+    <input type="radio" id="standard" name="options"><label>Standard Membership</label>
+    <br>
+    <input type="radio" id="basic" name="options"><label>Basic Membership</label>
+    <br>
+    <input type="button" id="b1" value="Submit" onclick="usersinput()">
+    <input type="button" id="cancel" value="Cancel" onclick="cancel()">
+</div>
+</body>
+</html>
