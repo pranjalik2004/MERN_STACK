@@ -1,0 +1,39 @@
+<!-- write code to check count of tags and text nodes
+present in div tag using DOM -->
+
+<html>
+<head>
+<script>
+function show(){
+    let t1 = document.getElementById('d1');
+    console.log(t1.childNodes);
+    let arr = t1.childNodes;
+    
+    let text = 0; // Variable to count text nodes
+    let tag = 0; // Variable to count element nodes (tags)
+  
+    for(const ob of arr){
+        console.log(ob.nodeType);
+    
+        if(ob.nodeType === 3) {
+            text = text + 1;
+        } else {
+            tag = tag + 1;
+        }
+    }
+    
+    console.log("Text nodes: " + text);
+    console.log("Element nodes (tags): " + tag);
+}
+</script>
+</head>
+<body>
+<input type="button" value="click here" onclick="show()">
+<br>
+<div id="d1">
+    <p>Text</p>
+    <br>
+    <p>More Text</p>
+</div>
+</body>
+</html>
